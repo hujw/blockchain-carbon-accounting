@@ -170,6 +170,7 @@ const networksAndAddresses = {
 }
 
 // change this to the network you want
-const addresses = networksAndAddresses.hedera_testnet;
+//const addresses = networksAndAddresses.hedera_testnet;
+const addresses = networksAndAddresses.hardhat;
 
 export default addresses;

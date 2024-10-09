@@ -29,8 +29,9 @@ describe("BigInt tests", function() {
   before(async function() {
     // create a test connection instance
     const db = await PostgresDBService.getInstance({
-      dbName: 'blockchain-carbon-accounting-test',
-      dbUser: process.env.POSTGRES_USER || '',
+      //dbName: 'blockchain-carbon-accounting-test',
+      dbName: 'blockchain-carbon-accounting',
+      dbUser: process.env.POSTGRES_USER || 'hujw',
       dbPassword: process.env.POSTGRES_PASSWORD || '',
       dbHost: process.env.POSTGRES_HOST || 'localhost',
       dbPort: 5432,

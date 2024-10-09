@@ -98,8 +98,10 @@ task("setTestAccountRoles", "Set default account roles for testing")
     const contract = await NetEmissionsTokenNetwork.attach(taskArgs.contract);
     
     const {get} = hre.deployments;
-    let carbonTracker = await get("CarbonTracker");
+    //let carbonTracker = await get("CarbonTracker");
     
+    console.log("Account " + admin.address + " is now a super user");
+
     await contract.connect(admin).registerDealer(dealer1, 1); // REC dealer
     console.log("Account " + dealer1 + " is now a REC dealer");
     await contract.connect(admin).registerDealer(dealer2, 3); // emissions auditor
@@ -1091,7 +1093,9 @@ module.exports = {
   },
   networks: {
     hardhat: {
-      chainId: 1337
+      chainId: 1337, 
+      host: '0.0.0.0',
+      port: 8545,
     },
     ovm_localhost: {
       url: `http://localhost:9545`
